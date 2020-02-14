@@ -18,7 +18,7 @@ app.use(express.static(publicDir));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-//GET ALL Lendas from database
+//GET ALL from database
 app.get("/perguntas",(req,res,next)=>{
   con.query('SELECT * FROM perguntas ORDER BY RAND() LIMIT 20',function(error,result,field){
     con.on('error',function(err){
